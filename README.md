@@ -1,4 +1,4 @@
-# cfx-skill
+# CFX-skill
 
 <div align="center">
 
