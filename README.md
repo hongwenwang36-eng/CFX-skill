@@ -19,10 +19,6 @@
 
 Skill 指导 Codex 编写脚本，MCP 负责调用软件，WBJN 串联整个仿真流程。
 
-<p align="center">
-  <img src="assets/workflow.svg" width="620" alt="仿真需求 → Codex + cfx-skill 编写脚本 → MCP 执行 → 几何、网格、CFX 与工程结果" />
-</p>
-
 ## 安装与使用
 
 需要 Windows、有效的 ANSYS 许可，以及已配置 [ANSYS-Workbench-mcp](https://github.com/hongwenwang36-eng/ANSYS-Workbench-mcp) 的 Codex。
