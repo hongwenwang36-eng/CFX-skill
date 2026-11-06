@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="292" viewBox="0 0 760 292" role="img" aria-labelledby="title desc">
+  <title id="title">从一句需求，到仿真结果</title>
+  <desc id="desc">用户提出仿真需求，Codex 读取 cfx-skill 编写 WBJN 和模块脚本，再通过 Workbench MCP 调用软件。WBJN 主控依次完成几何建模、网格划分、CFX 求解，最终保存可重新打开的工程和结果。</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#285ae9"/><stop offset="1" stop-color="#1743b8"/></linearGradient>
+    <marker id="arrow" markerWidth="7" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1L4 4L1 7" fill="none" stroke="#a3b2c9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="759" height="291" rx="18" fill="#fff" stroke="#e5eaf2"/>
+  <g font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Arial, sans-serif">
+    <text x="24" y="35" font-size="18" font-weight="700" fill="#172842">从一句需求，到仿真结果</text>
+    <rect x="607" y="18" width="129" height="24" rx="12" fill="#f0f5ff"/>
+    <text x="671.5" y="34" text-anchor="middle" font-size="11" font-weight="600" fill="#3863ad">cfx-skill × MCP</text>
+
+    <rect x="24" y="64" width="160" height="104" rx="12" fill="#f8fafd" stroke="#e5eaf2"/>
+    <text x="40" y="86" font-size="10" font-weight="600" fill="#8090a8">01　提出要求</text>
+    <g transform="translate(40 101)" fill="none" stroke="#5c7497" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M1 1h18v13H7l-5 4V1"/><path d="M6 6h8M6 10h5"/>
+    </g>
+    <text x="68" y="116" font-size="17" font-weight="700" fill="#172842">仿真需求</text>
+    <text x="40" y="147" font-size="11" fill="#718198">几何 · 物理 · 计算目标</text>
+
+    <path d="M195 116H221" fill="none" stroke="#a3b2c9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="232" y="64" width="240" height="104" rx="12" fill="url(#blue)"/>
+    <text x="250" y="86" font-size="10" font-weight="600" fill="#c6d7ff">02　理解需求 · 编写脚本</text>
+    <g transform="translate(250 101)" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M6 2L1 8l5 6M15 2l5 6-5 6M12 0L9 16"/>
+    </g>
+    <text x="280" y="117" font-size="18" font-weight="700" fill="#fff">Codex + cfx-skill</text>
+    <text x="250" y="147" font-size="11" fill="#dbe6ff">生成 WBJN 主控与各模块脚本</text>
+
+    <path d="M483 116H509" fill="none" stroke="#a3b2c9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="520" y="64" width="216" height="104" rx="12" fill="#f8fafd" stroke="#e5eaf2"/>
+    <text x="537" y="86" font-size="10" font-weight="600" fill="#8090a8">03　连接软件 · 执行脚本</text>
+    <g transform="translate(537 101)" fill="none" stroke="#5c7497" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 5H5a5 5 0 000 10h3M12 5h3a5 5 0 010 10h-2M6 10h8"/>
+    </g>
+    <text x="565" y="117" font-size="17" font-weight="700" fill="#172842">Workbench MCP</text>
+    <text x="537" y="147" font-size="11" fill="#718198">调用 ANSYS，执行自动化流程</text>
+
+    <text x="26" y="189" font-size="10" font-weight="600" fill="#7a8ba4">Workbench · WBJN 主控</text>
+    <path d="M628 168V195" fill="none" stroke="#a3b2c9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="24" y="202" width="712" height="66" rx="12" fill="#f2f5fa"/>
+    <g font-size="14" font-weight="700" fill="#2b405f">
+      <text x="44" y="231">几何建模</text>
+      <text x="210" y="231">网格划分</text>
+      <text x="434" y="231">CFX 求解</text>
+      <text x="596" y="231" fill="#2459cf">工程与结果</text>
+    </g>
+    <g font-size="10" fill="#7a8ba4">
+      <text x="44" y="250">创建或导入</text>
+      <text x="210" y="250">ICEM CFD / Ansys Meshing</text>
+      <text x="434" y="250">设置与计算</text>
+      <text x="596" y="250">可重新打开查看</text>
+    </g>
+    <g fill="none" stroke="#a3b2c9" stroke-width="1.5" marker-end="url(#arrow)">
+      <path d="M131 232H181"/><path d="M377 232H406"/><path d="M522 232H568"/>
+    </g>
+  </g>
+</svg>
