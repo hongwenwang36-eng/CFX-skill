@@ -2,6 +2,7 @@
 
 [English](README.en.md) | [简体中文](README.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [日本語](README.ja.md)
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Skill source](https://img.shields.io/badge/Skill-Markdown%20%2B%20YAML-2563EB)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/hongwenwang36-eng/CFX-skill?style=social)](https://github.com/hongwenwang36-eng/CFX-skill/stargazers)
@@ -18,7 +19,7 @@
 
 ## 記述言語
 
-Skill 本体は **Markdown（中国語の指示）+ YAML 設定**で記述しています。Codex は指示を読み、ケースに応じて Workbench WBJN（Python）、ICEM Tcl/Replay、CFX CCL/CEL とセッションスクリプトを生成します。
+本プロジェクトは **Python 3.10+ 実行ツール、Markdown の Skill 指示（中国語）、YAML 設定**で構成されています。Python は共通の実行・検証処理を担い、Codex はケースに応じて WBJN、ICEM Tcl/Replay、CFX CCL/CEL とセッションスクリプトを生成します。
 
 ## 連携の仕組み
 
@@ -27,6 +28,17 @@ Skill が Codex のスクリプト作成を導き、MCP がソフトウェアを
 <p align="center">
   <img src="assets/workflow.svg" width="620" alt="仿真需求 → Codex + cfx-skill 编写脚本 → MCP 执行 → 几何、网格、CFX 与工程结果" />
 </p>
+
+## Python ツール
+
+`scripts/cfx_runtime.py` は環境確認、MCP バッチ実行、新しいログ・成果物の確認、プロジェクトの保存・再読込、成果物のコピーと SHA-256 検証を提供します。リポジトリ内で以下を実行してください。詳細は [実行ツールのガイド](references/runtime.md)を参照してください。
+
+```powershell
+python scripts/cfx_runtime.py doctor
+python scripts/cfx_runtime.py --help
+```
+
+解析実行は既定で MCP を通じて Workbench を呼び出します。連携 MCP の仮想環境の Python を使うと依存パッケージを利用できます。形状、メッシュ、物理モデルと独自アルゴリズムは要件に応じて生成します。
 
 ## インストールと使い方
 

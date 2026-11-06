@@ -15,4 +15,8 @@ description: 按用户的工程要求编写或修改 ANSYS Workbench 主控 WBJN
 4. 网格工具和网格要求分别处理。用户点名 ICEM CFD 或 Ansys Meshing 时按指定路线执行；指定工具无法满足硬约束时，报告具体原因，保留原要求。由你选择时，检查已有 Blocking、可扫掠几何、单元类型、层数和设计点间拓扑变化，给出选择依据。按实际路线只读一份指南：[Ansys Meshing](references/ansys-meshing.md) 或 [ICEM CFD](references/icem-cfd.md)。
 5. 涉及参数或自定义算法时读 [参数与主控算法](references/parameters-and-control.md)。调用 MCP、设置 CFX 及交付工程时读 [执行与验收](references/execution.md)。将本次生成的脚本保存在算例目录，与 Skill 自身及 MCP 桥接源码分开。
 
+## Python 执行工具
+
+程序检测、WBJN 批处理、日志及新产物检查、工程另存重开和交付校验，优先复用 [scripts/cfx_runtime.py](scripts/cfx_runtime.py)，用法见 [Python 工具](references/runtime.md)。它在 Workbench 外的 Python 3.10+ 中运行，默认通过配套 MCP 执行 WBJN；使用配套 MCP 虚拟环境的 Python 可复用已安装的 `mcp` 依赖。既有实时会话仍通过 MCP 操作，不为保存而同时批处理打开同一工程。工具的文件完整性检查与实际物理验收分别记录，CFX 终止规则按本次稳态或瞬态算例设置。
+
 默认由用户打开 CFD-Post 看云图。求解闭环需要力、力矩、压降或温度等数值时，配置可核查的标量读取途径。交付时指出主工程、配套目录、结果和可编辑脚本的位置，列出本次实测的设计点、网格与求解状态，以及未验证事项。

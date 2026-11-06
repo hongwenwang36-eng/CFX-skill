@@ -2,6 +2,8 @@
 
 **先定位执行环境。** 查询当前连接的 ansys_workbench MCP 工具和参数签名，用 `check_ansys_installation` 确认版本、所需程序和路径。每次运行使用独立算例目录，修改已有工程时先保存工作副本，并保持项目文件与配套目录的名称匹配。记录算例 ID、设计点、输入和运行开始时间。
 
+**复用 Python 工具。** 按 [runtime.md](runtime.md) 调用 `scripts/cfx_runtime.py`。`doctor` 检测程序，`run` 默认通过 MCP 运行本次 WBJN，并核对新日志、新产物和可选的 CFX 终止规则；`save` 使用 Workbench 打开、另存并重开工程副本；`package` / `verify-package` 整理交付文件并核对 SHA-256。主控仍负责更新网格、求解和按实际物理标准验收；不要把 `package` 的哈希检查当作求解收敛或工程关联验证。
+
 | 需要的操作 | 已有 MCP 入口及用法 |
 |---|---|
 | 写入本次生成的脚本 | `write_ansys_script` 接收完整脚本正文及输出路径。先完成具体脚本编写，再调用工具写入。 |

@@ -2,6 +2,7 @@
 
 [English](README.en.md) | [简体中文](README.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [日本語](README.ja.md)
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Skill source](https://img.shields.io/badge/Skill-Markdown%20%2B%20YAML-2563EB)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/hongwenwang36-eng/CFX-skill?style=social)](https://github.com/hongwenwang36-eng/CFX-skill/stargazers)
@@ -18,11 +19,22 @@
 
 ## 编写语言
 
-Skill 本体使用 **Markdown（中文指令）+ YAML 配置**编写。Codex 读取这些指令后，按算例生成 Workbench WBJN（Python）、ICEM Tcl/Replay 和 CFX CCL/CEL、会话脚本。
+本项目使用 **Python 3.10+ 执行工具 + Markdown（中文 Skill 指令）+ YAML 配置**。Python 封装通用执行与验收操作，Codex 按算例生成 WBJN、ICEM Tcl/Replay 和 CFX CCL/CEL、会话脚本。
 
 ## 如何配合
 
 Skill 指导 Codex 编写脚本，MCP 负责调用软件，WBJN 串联整个仿真流程。
+
+## Python 工具
+
+`scripts/cfx_runtime.py` 提供程序检测、MCP 批处理、新日志与产物检查、工程另存重开、交付整理和 SHA-256 校验。在本仓库目录运行以下命令，完整参数见 [Python 工具说明](references/runtime.md)。
+
+```powershell
+python scripts/cfx_runtime.py doctor
+python scripts/cfx_runtime.py --help
+```
+
+执行仿真时默认通过 MCP 调用 Workbench；使用配套 MCP 虚拟环境的 Python 即可复用其依赖。几何、网格、物理模型与自定义算法仍按需求生成。
 
 ## 安装与使用
 

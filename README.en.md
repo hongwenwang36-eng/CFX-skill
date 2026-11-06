@@ -2,6 +2,7 @@
 
 [English](README.en.md) | [简体中文](README.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [日本語](README.ja.md)
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Skill source](https://img.shields.io/badge/Skill-Markdown%20%2B%20YAML-2563EB)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/hongwenwang36-eng/CFX-skill?style=social)](https://github.com/hongwenwang36-eng/CFX-skill/stargazers)
@@ -18,7 +19,7 @@ Describe your simulation in plain language. Codex writes scripts and uses MCP to
 
 ## Authoring languages
 
-The Skill is written in **Markdown (Chinese instructions) + YAML configuration**. Codex reads it and generates case-specific Workbench WBJN (Python), ICEM Tcl/Replay, CFX CCL/CEL and session scripts.
+The project combines **Python 3.10+ runtime tools, Markdown Skill instructions (Chinese) and YAML configuration**. Python handles reusable execution and verification; Codex generates case-specific WBJN, ICEM Tcl/Replay, CFX CCL/CEL and session scripts.
 
 ## How it works
 
@@ -27,6 +28,17 @@ The Skill guides Codex in writing scripts. MCP calls the software, and WBJN orch
 <p align="center">
   <img src="assets/workflow.svg" width="620" alt="仿真需求 → Codex + cfx-skill 编写脚本 → MCP 执行 → 几何、网格、CFX 与工程结果" />
 </p>
+
+## Python tools
+
+`scripts/cfx_runtime.py` provides installation checks, MCP batch execution, fresh-log and artifact checks, project save/reopen, delivery packaging and SHA-256 verification. Run these commands from the repository; see the [runtime guide](references/runtime.md) for full options.
+
+```powershell
+python scripts/cfx_runtime.py doctor
+python scripts/cfx_runtime.py --help
+```
+
+Simulation execution uses MCP to call Workbench by default. Run with the companion MCP virtual environment’s Python to reuse its dependencies. Geometry, mesh, physics and custom algorithms are generated for each task.
 
 ## Install and use
 
